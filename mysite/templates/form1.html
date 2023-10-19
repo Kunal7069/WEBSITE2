@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('http://online.ietlucknow.ac.in/assets/example/bg_suburb.jpg'); /* Replace 'background.jpg' with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            height: 385vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .head{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    padding: 20px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    z-index: 99;
+}
+.logo{
+    font-size: 2em ;
+    color: #fff;
+    user-select: none;
+}
+.navigation a{
+    position: relative;
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 40px;
+}
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.navigation a:hover::after{
+    transform-origin: left;
+transform: scaleX(1);
+}
+.navigation .btnlogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+.navigation .btnlogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+        
+.container {
+            width: 100%;
+            height:2290px;
+            max-width: 1000px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add transparency to the background color */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+       
+       
+ }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],[type="number"],[type="date"],[type="email"], input[type="file"] {
+            width: 70%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .signature-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .signature {
+            text-align: center;
+        }
+
+        .signature input[type="file"] {
+            margin: 10px;
+        }
+
+        button[type="submit"] {
+            display: inline;
+            width: 25%;
+            margin-left: 370px;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #e7a85f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h2 class="logo">Ramanujan Hostel</h2>
+     <div class="ee"> 
+        
+         </div>
+    <nav class="navigation">
+     {% comment %} <a href="open/">Home</a>
+     <a href="open/">Form </a> {% endcomment %}
+     <a href="about/">logout</a>
+    </nav>
+</div>
+
+    <div class="container">
+        
+        <form action="/form2/" method="post">
+            {% csrf_token %}
+            <h1>Ramanujan hostel<br>Institute Of Engineering And Technology, Lucknow</h1>
+        <b style="margin-left: 260px;">Application for allotment of hostel room in Ramanujan (First year)</b>
+            
+            <label for="date"><b>Reporting Date:</b></label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="branch"><b>Branch</b></label>
+            <input type="text" id="branch" name="branch" required>
+
+            <label for="Roll number"><b>Roll number</b></label>
+            <input type="text" id="Roll number" name="rollno" required>
+
+            <label for="studentName"><b>Name of Student</b></label>
+            <input type="text" id="studentName" name="studentname" required>
+
+            <label for="category"><b>category</b></label>
+            <input type="text" id="category" name="category" required>
+
+            
+            <label for="fatherName"><b>Father's Name</b></label>
+            <input type="text" id="fatherName" name="fathername" required>
+
+            
+            <label for="Occuption"><b>Occuption</b></label>
+            <input type="text" id="Occuption" name="occuption" required>
+
+            <label for="income"><b>Annual Income</b></label>
+            <input type="text" id="income" name="income" required>
+
+            <label for="addres"><b>Permanent-address</b></label>
+            <input type="text" id="addres" name="address" required>
+
+            <label for="localguardian"><b>Local guardian's name</b></label>
+            <input type="text" id="localguardian" name="localguardianname" required>
+
+            <label for="localguardian"><b>Local guardian's address</b></label>
+            <input type="text" id="localguardian" name="localguardianaddress" required>
+
+            <label for="mobile number"><b>Mobile number of Local guardian</b></label>
+            <input type="text" id="mobile number" name="mobilenumberguardian" required>
+
+            <label for="mobile number"><b>Mobile number-Self</b></label>
+            <input type="text" id="mobile number" name="mobilenumberself" required>
+
+            <label for="mobile number"><b>Mobile number-father</b></label>
+            <input type="text" id="mobile number" name="mobilenumberfather" required>
+
+            <label for="mobile number"><b>Mobile number-mother</b></label>
+            <input type="text" id="mobile number" name="mobilenumbermother" required>
+
+            <label for="email"><b>E-mail address-self: </b></label>
+            <input type="email" id="email" name="emailself" required>
+
+            
+            <label for="email"><b>E-mail address-parent: </b></label>
+            <input type="email" id="email" name="emailparent" required>
+
+            <label for="Account number"><b>Account number</b></label>
+            <input type="text" id="Account number" name="accountnumber" required>
+
+            <label for="IFSC code"><b>IFSC code</b></label>
+            <input type="text" id="IFSC code" name="ifsc" required>
+
+            <label for="bank-name"><b>Bank name</b></label>
+            <input type="text" id="bank name" name="bank" required> 
+
+            <label for="accountholdername"><b>Name of account holder</b></label>
+            <input type="text" id="board" name="accountholdername" required>
+
+            <label for="marks"><b>% of marks in intermediate</b></label>
+            <input type="text" id="marks" name="marks" required>
+
+            <label for="rank"><b>JEE Ranking</b></label>
+            <input type="text" id="rank" name="jeerank" required>
+
+            <label for="rank"><b>NRI/UPSEE Ranking</b></label>
+            <input type="text" id="rank" name="upseerank">
+<br>
+            <b>I certified that I have never been involved in the following activities during previous studies:</b>
+                 <br><br>
+                 <b> 1. Disciplinary action taken against me </b><br><br>
+                 <b> 2. Caught and punished in any unlawful activities </b><br><br>
+                 <b> 3. Found using unfair means in the examination </b><br><br>
+        <h1><u><b>UNDERTAKING</b></u></h1>    
+           <br>
+           <p><b>I hereby certified that the above submitted by me is correct, I shall abide by the rules and regulations of the hostel and would not participate in any unwanted activities in the hostel as prescribed by the institute. I have read and understand the rules and regulations of the hostel and promise to follow them.</b></p>
+            <div class="signature-container">
+                <div class="signature">
+                    <h2>Sign of Student</h2>
+                    <input type="file" id="signatureOne" name="signatureself" accept="image/*" required>
+                </div>
+
+                <div class="signature">
+                    <h2>Sign of Parents</h2>
+                    <input type="file" id="signatureTwo" name="signatureparent" accept="image/*" required>
+                </div>
+            </div>
+
+            <div class="signature">
+                <h2>Photo</h2>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+            </div>
+
+            <button type="submit">Next</button>
+        </form>
+    </div>
+
+</body>
+</html>

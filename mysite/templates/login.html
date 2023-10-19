@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('http://online.ietlucknow.ac.in/assets/example/bg_suburb.jpg'); /* Replace 'university-image.jpg' with your image file path */
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            backdrop-filter: blur(8px); /* Apply the blur effect to the container */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .radio-group input[type="radio"] {
+            display: none;
+        }
+
+        .radio-group label {
+            cursor: pointer;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .radio-group input[type="radio"]:checked + label {
+            background-color: #e7a85f;
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+             
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e7a85f;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #e7a85f;
+        }
+
+        .form-links {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-links a {
+            text-decoration: none;
+            color: #e7a85f;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .form-links a:hover {
+            color: #e7a85f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        
+        <form id="login-form" method="post" action="/login">
+          {% csrf_token %}
+          <div class="radio-group">
+            <input type="radio" id="student" name="user-type" value="student" checked>
+            <label for="student">Student</label>
+            <input type="radio" id="teacher" name="user-type" value="teacher">
+            <label for="teacher">Teacher</label>
+        </div>
+            <div class="form-group">
+                <label for="username">username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required >
+            </div>
+            <div class="form-group">
+                <button type="submit" >Login</button>
+            </div>
+        </form>
+        <div class="form-links">
+            <a href="/signup">Sign up</a>
+        </div>
+    </div>
+    {% comment %} <script>
+        // JavaScript code to handle form submission and user role selection
+        document.getElementById("login-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get user role selection
+            const userType = document.querySelector('input[name="user-type"]:checked').value;
+
+            // Get username and password
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // You can add your authentication logic here (e.g., API calls)
+            // For the sake of this example, we'll just display a message
+            let message = `Logged in as a ${userType}: ${username}`;
+
+            // Display a message (you can replace this with actual authentication logic)
+            alert(message);
+        });
+    </script> {% endcomment %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+{% comment %} <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <a type="button" class="btn btn-primary" href="/login_teacher">AS A TEACHER</a>
+    <a type="button" class="btn btn-primary" href="/login_student">AS A STUDENT</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html> {% endcomment %}

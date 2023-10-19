@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University Main Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .menu2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        header {
+            background-image: url('http://online.ietlucknow.ac.in/assets/example/bg_suburb.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            color: #fff;
+            position: absolute;
+            top: 0;
+    left: 0;
+    width: 88.8%;
+    padding: 20px 70px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.logo{
+    font-size: 2em ;
+    color: #fff;
+    user-select: none;
+}
+.navigation a{
+    position: relative;
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 40px;
+}
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.navigation a:hover::after{
+    transform-origin: left;
+transform: scaleX(1);
+}
+.navigation .btnlogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+.navigation .btnlogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+        /* .menu2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #2d2e2e;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+} */
+.main-content {
+            padding: 20px;
+            margin-top: 530px; /* Adjust margin-top to account for the fixed navbar's height */
+            font-family: 'Helvetica', sans-serif; /* Change the font family */
+            font-size: 20px; /* Change the font size */
+            line-height: 1.5; /* Adjust line height as needed */
+        }
+
+        /* Style the header content */
+        .header h1 {
+            margin-top: 150px;
+            padding: 10px 0;
+
+        }
+        #rules{
+            text-align: center;
+        }
+        .rule{
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+            <h2 class="logo">Ramanujan Hostel</h2>
+        <nav class="navigation">
+         <a href="/login/">Home</a>
+         <a href="/form1/">Form </a>
+         <a href="/">logout</a>
+        </nav>
+    </header>
+    <!-- <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div> -->
+      <div class="main-content">
+        <section id="rules">
+            <h2><u><b>Hostel Rules</b></u></h2>
+        </section>
+            <div class="rule">
+                <p>
+                    <b>1.</b> Hostel management does not own any responsibility for the loss of property left in the rooms unlocked or due to inmates negligence
+                    <br><br>
+                    <b>2.</b> inmates are strictly forbidden from using personal gadgets like immersion heaters, hot plates electric irons VCD etc. failing which the Warden will have the right to confiscate the gadget. The lights in the bathroom should be used only as and when necessary and shall not be kept on when the bathroom is not used While leaving the room students should take care to put off the lights and fans without fall in case of default, a fine will be charged an every such occasion Tate lamps can be used for study purpose. Students are not allowed to extra electrical fitting in their rooms unless permitted by the Hostel Authorities. No computer will be allowed in the room, only laptops with permission.
+                    <br><br>
+                    <b>Cooking in hostel room is not permitted.</b>
+                    <br><br>
+                    <b>3.</b> Inmates should always keep their belongings under lock & key and also lock their rooms whenever they go out. Student should not keep large amount of cash or costly items like mobile phones, camera, electronic gadgets, jewellery etc. in their rooms. Hence complaint about loss or theft about such costly item is discouraged.
+                    <br><br>
+                    <b>4.</b> Furniture and other items should not be moved out of the room.
+                    <br><br>
+                    <b>5.</b> Willful damage to furniture, electrical and other fittings will be recovered at the double cost from the individuals if identified otherwise recovered collectively from the inmates of that room.
+                    <br>
+                    <b>6.</b> Student shall not bring and/or ke<br>ep any pets in the premises including fish, cats, dogs, and so on Students should desist from pampering stray dog by offering food. petting them etc.
+                    <br>
+                    <b>7.</b> No member is permitted to entertain any ex-student of the college, ex inmate of this Hotel, relative or friend. No allowed bring a guest in the hostel to stay there without the previous permission of the warden. If guest is allowed by the warden, the member introducing the guest is responsible for all the charges incurred by the guest.
+                    <br><br>
+                    <b>8.</b> The warden shall have power to refuse permission to stay in the hostel to any person as guest without assigning any reason. E) A register of guests will be maintained in the following form. The student who brings the guests will fill in the details in the register
+                    <br><br>
+                    <b>a.</b>	Name and Room number of inmate.<br><br>
+                    <b>b.</b>	Name and address of the guest.<br><br>
+                    <b>c.</b>	Date of arrival.<br><br>
+                    <b>d.</b>	Date of departure<br><br>
+                    <b>e.</b>	Signature of student.<br><br>
+                    <b>f.</b>	Signature of Resident Warden/warden/attendant<br><br>
+ 
+<b>9.</b> Members shall not issue orders to hostel staff and servants and interfere in their work. Cases of misconduct of hostel employees shall be immediately brought to the notice of the warden.<br><br>
+<b>10.</b> Inmates are not permitted to keep firecrackers /explosives or dangerous weapons or instruments that can cause serious injury to others.<br><br>
+<b>11.</b> Smoking, consuming or possessing alcoholic drinks, gambling etc are strictly prohibited in the hostel.<br><br>
+<b>12.</b> Inmates of the hostel are not allowed to make any complaint as a body or submit any group representation. However individual representations addressed to the warden alone will be looked into.<br><br>
+<b>13.</b> No one shall indulge in politics, violence, rioting or instigate communal feelings or have dealings with outside organizations inside the premises. Such activities are prohibited and if found they are expelled from the hostel.<br><br>
+<b>14.</b> Strict discipline should be maintained in the dining and common places in the hostel. Most important that fighting or abusing to your in mates, hostel staff or security guards is considered as indiscipline acts.<br><br>
+<b>15.</b> Members should keep their rooms scrupulously clean. Solid things and clothes should be stored out of sight. Disorded rags and papers should not be thrown about in the rooms corridor, terrace and premises. The rooms, doors etc, should not be disfigured by writing sticking hand bills, postures etc. A sudden inspection of the toom may done by the Authorities of the hostel/institute and finding negligence of the above is punishable<br><br>
+<b>16.</b> A Collective fine of Rs 3000 will be collected from the residents of the respective floors for disfiguring Veranda's and Bathrooms in addition to the amount needed for repairing the above<br><br>
+<b>17.</b> The warden has full power to take any action or give punishments in the form of fine suspension or expulsion.<br><br>
+<b>18.</b> inmates participating in college or department activities should obtain necessary order from the concerned authorities to leave the hostel.<br><br>
+<b>19.</b> Apart from the above any other rule enforced by the Warden from time to time should be strictly followed by the inmates.<br><br>
+<b>20.</b> Any student who is removed from the college will automatically cease to be a member of the hostel<br><br>
+<section id="rules">
+<b><u>Medical Aid</u></b><br>
+</section>
+In case of any medical problem, inmates may contact to resident warden or attendant residing in the hostel. to case of serious of infection diseases the guardian of the patient will be unformed<br><br>
+<section id="rules">
+    <b><u>Holidays</u></b><br>
+    </section>
+The hostel will normally be closed during Diwali and Holl holidays and semester end vacation. however, warden will consider applications for staying in the hostel during the holidays.
+
+<section id="rules">
+    <b><u>General conditions</u></b><br>
+    </section>
+No stranger will be allowed in the hostel premises for carrying out any business. Bulbs and tube lights will be provided at the beginning of the occupancy, subsequent individual room fittings will be taken care of by the individuals concerned and common areas fittings will be taken care of by students as a whole. Students are not supposed to take common room / area fittings / furnishings to their individual rooms. Violators will be fined Rs 1,000/- per violation.<br><br>
+
+<section id="rules">
+    <b><u>VACATING:</u></b><br>
+    </section>
+<b>1.</b> Application for Vacating hostel shall be made in the format prescribed and it should be submitted and approval obtained well in advance from the warden.<br><br>
+<b>2.</b> A written consent of the parent/Guardian should be enclosed to the hostel vacating application.<br><br>
+<b>3.</b> Inmates vacating hostel should hand over the furniture, room key and pay all his/her mess dues.<br><br>
+<b>4.</b> Before vacating the hostel accommodation, students are required to hand over the room to the sergeant in the same condition it was handed over to him except for normal wear and tear<br><br>
+
+<section id="rules">
+    <b><u>Note:</u></b><br>
+    </section>
+<b>1.</b> Inmates should stay, work and sleep in their own rooms.<br><br>
+<b>2.</b> Marking attendance as and when required is the sole responsibility of the respective student. Failing which may lead punishable consequences.<br><br>
+<b>3.</b> Wandering on roof tops and locked terraces is not permitted due to security reasons. Do not ask for the same.<br><br>
+<b>4.</b> No inmates shall enter or leave the hostel after 8:00 P.M. However, late comers will be admitted on the permission of warden. A fine may be imposed if no valid reason of being late is found.<br><br>
+<b>5.</b> When a student is required to stay away, he has to intimate the warden the duration of the absence and the probable time of his arrival on his return at the hostel. Mis-conduct or breach of any of the above hostel rules will render the offender liable to fine, suspension or dismissal.<br><br>
+<b>6.</b> Proper entry/exit has to be made on the register maintained on.<br><br>
+<b>7.</b> Inmate is required to keep hostel Icard with him and to show as and when required.<br><br>
+<b>8.</b> Visiting time in the Hostel is between 5:30 and 8:00 P.M. on all days. Visitors are allowed only 15 minutes. The visitor has to enter in the visitors register his/her name, address, the name of the inmate and relationship with the inmate whom he/she wants to meet. The visitor can converse with the inmate at the visiting lobby and not anywhere also in the hostel premises. No visitor including day scholars shall be taken to the hostel rooms or any other areas of the hostel.<br><br>
+<b>9.</b> No vehicles will be permitted in the hostel. There will be no responsibility of any hostel management personal for any loss or damage to the vehicle.<br><br>
+
+            </div>
+        
+    </div>
+      <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      </script>
+</body>
+</html>

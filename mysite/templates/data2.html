@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>officecopy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('http://online.ietlucknow.ac.in/assets/example/bg_suburb.jpg'); /* Replace 'background.jpg' with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 150vh;
+            /* display: flex; */
+            margin-top: 110px;
+            text-align: center;
+        }
+        .head{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    padding: 20px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    z-index: 99;
+}
+.logo{
+    font-size: 2em ;
+    color: #fff;
+    user-select: none;
+}
+.navigation a{
+    position: relative;
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 40px;
+}
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.navigation a:hover::after{
+    transform-origin: left;
+transform: scaleX(1);
+}
+.navigation .btnlogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+.navigation .btnlogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+.container {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .table-container {
+    text-align: center;
+    flex: 1;
+    width: 50%; /* Set the width of the table container to 40% */
+  }
+
+  table {
+    text-align: center;
+    margin-top: 70px;
+    margin-left: 80px;
+    margin-bottom: 10px;
+    width: 55%;
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    text-align: center;
+    border: 1px solid rgb(180, 171, 171);
+  }
+
+  th, td {
+    text-align: center;
+    padding: 15px;
+    text-align: left;
+    width: 50%;
+  }
+  th{
+    background-color: #e7a85f;
+  }
+  td{
+            background-color: #fff;
+        }
+  .passport-photos {
+    text-align: right;
+  }
+
+  .passport-photo {
+    margin-top: 80px;
+    margin-right: 190px;
+    margin-bottom: 20px;
+    display: block;
+    width: 300px; 
+    height: 200px; 
+    border-radius: 20px; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  .caption {
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 200;
+  }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h2 class="logo">Ramanujan Hostel</h2>
+     <div class="ee"> 
+        
+         </div>
+    <nav class="navigation">
+     <a href="open/">Table</a>
+     <a href="about/">logout</a>
+    </nav>
+</div>
+<main>
+    <div class="container">
+        <div class="table-container">
+            <table>
+                <tr>
+                  <th>ENTRIES</th>
+                  <th>DATA</th>
+                </tr>
+            {%for x in data%}
+            <tr>
+                <td>Reporting Date:</td>
+                <td>{{x.date}}</td>
+              </tr>
+              <td>Branch</td>
+                <td>{{x.branch}}</td>
+              </tr> <td>Roll number</td>
+              <td>{{x.rollno}}</td>
+           </tr> <td>Name of Student</td>
+            <td>{{x.studentname }}</td>
+          </tr> <td>category</td>
+          <td>{{x.category}}</td>
+        </tr> <td>Father's Name</td>
+        <td>{{x.fathername}}</td>
+      </tr> <td>Occuption</td>
+      <td>{{x.occuption}}</td>
+    </tr> <td>Annual Income</td>
+    <td>{{x.income}}</td>
+  </tr> <td>Permanent-address</td>
+  <td>{{x.address}}</td>
+  </tr> <td>Local guardian's name</td>
+  <td>{{x.localguardianname}}</td>
+  </tr> <td>Mobile number of Local guardian</td>
+  <td>{{x.mobilenumberguardian}}</td>
+  </tr> <td>Mobile number-Self</td>
+  <td>{{x.mobilenumberself}}</td>
+  </tr> <td>Mobile number-father</td>
+  <td>{{x.mobilenumberfather}}</td>
+  </tr> <td>Mobile number-mother</td>
+  <td>{{x.mobilenumbermother}}</td>
+  </tr> <td>E-mail address-self</td>
+  <td>{{x.emailself}}</td>
+  </tr> <td>E-mail address-parent</td>
+  <td>{{x.emailparent}}</td>
+  </tr>
+  <tr>
+  <td>Account number</td>
+  <td>{{x.accountnumber}}</td>
+  </tr>
+  <tr>
+          <td>IFSC code</td>
+          <td>{{x.ifsc}}</td>
+          </tr>
+          <tr>
+              <td>Bank name</td>
+              <td>{{x.bank}}</td>
+              </tr>
+              <tr>
+                  <td>Name of account holder</td>
+                  <td>{{x.accountholdername}}</td>
+                  </tr>
+                  <tr>
+                      <td>% of marks in intermediate</td>
+                      <td>{{x.marks}}</td>
+                      </tr>
+                      <tr>
+                          <td>JEE Ranking</td>
+                          <td>{{x.jeerank}}</td>
+  </tr>
+  <tr>
+      <td>NRI/UPSEE Ranking</td>
+      <td>{{x.upseerank}}</td>
+      </tr>
+      <tr>
+          <td>Room number</td>
+          <td>{{x.roomnumber}}</td>
+          </tr>
+                      <tr>
+                          <td>Draft Number</td>
+                          <td>{{x.draft}}</td>
+                          </tr>
+                          <tr>
+                              <td>Bank name</td>
+                              <td>{{x.draftbankname}}</td>
+                              </tr>
+                              <tr>
+                                  <td>in favour of</td>
+                                  <td>{{x.favour}}</td>
+                                  </tr>
+            </table>
+          </div>
+          <div class="passport-photos">
+              <div class="passport-photo">
+            <img class="passport-photo" src=`{{x.photo.url}}` alt="Passport Photo 1"><div class="caption"><b>Name</b></div>
+            </div>
+            <div class="passport-photo">
+              <img class="passport-photo" src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="Passport Photo 1"><div class="caption"><b>Student's signature</b></div>
+              </div>
+              <div class="passport-photo">
+                  <img class="passport-photo" src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="Passport Photo 1"><div class="caption"><b>Parent's signature</b></div>
+                  </div>
+          </div>
+            {%endfor%}
+          
+            
+      </div>
+   </main>
+</body>
+</html>
