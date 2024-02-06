@@ -3,7 +3,6 @@ from django.shortcuts import render
 from login.models import Student,Faculty,Detail
 def home(request):
     return render(request,"home.html")
-
 def login(request):
     if request.method=='POST':
         usertype =request.POST.get('user-type')
